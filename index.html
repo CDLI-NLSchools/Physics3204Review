@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Physics 3204 Review: Practice Question Bank</title>
+<script>
+/* Physics3204Review now lives in the unified review app. Forward to it,
+   preserving the visitor's query string and hash: an incoming course
+   parameter wins, otherwise course=physics-3204 is supplied. Any other
+   incoming parameters are appended unchanged. */
+(function () {
+  var base = "https://cdli-nlschools.github.io/ReviewApps/";
+  var incoming = new URLSearchParams(location.search);
+  var p = new URLSearchParams();
+  if (!incoming.has("course")) p.set("course", "physics-3204");
+  incoming.forEach(function (value, key) { p.append(key, value); });
+  var qs = p.toString();
+  location.replace(base + (qs ? "?" + qs : "") + location.hash);
+})();
+</script>
+</head>
+<body>
+<p>The Physics 3204 Review app has moved to the unified review app.
+<a href="https://cdli-nlschools.github.io/ReviewApps/?course=physics-3204">Continue to Physics 3204 Review</a>.</p>
+</body>
+</html>
